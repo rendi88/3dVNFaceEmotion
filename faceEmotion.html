@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+		<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+		<link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+		<script type="text/javascript">
+			jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+				"formatted-num-pre": function ( a ) {
+					a = (a === "-" || a === "") ? 0 : a.replace( /[^\d\-\.]/g, "" );
+					return parseFloat( a );
+				},
+
+				"formatted-num-asc": function ( a, b ) {
+					return a - b;
+				},
+
+				"formatted-num-desc": function ( a, b ) {
+					return b - a;
+				}
+			} );
+
+			
+			$(document).ready( function () {
+				$('#emotion1').dataTable( {
+					columnDefs: [
+						{ type: 'formatted-num', targets: 0 }
+					]
+				});
+				$('#emotion2').dataTable( {
+					columnDefs: [
+						{ type: 'formatted-num', targets: 0 }
+					]
+				});
+				$('#emotion3').dataTable( {
+					columnDefs: [
+						{ type: 'formatted-num', targets: 0 }
+					]
+				});
+				$('#emotion4').dataTable( {
+					columnDefs: [
+						{ type: 'formatted-num', targets: 0 }
+					]
+				});
+
+			} );
+		</script>
+		<style type="text/css">
+			table, th, td{
+				border:1px solid black;
+				border-collapse : collapse;
+				vertical-align: top;
+			}
+
+			table img{
+				width:200px;
+			}
+		</style>
+
+	</head>
+	<body>
+		faceEmotion
+		<table id="emotion1">
+			<thead>
+				<tr>
+					<th>Code</th>
+					<th>Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>0</td>				
+					<td>Neutral<br/><img src="./img/Neutral.gif" /></td>
+				</tr>
+				<tr>
+					<td>1</td>				
+					<td>Angry<br/><img src="./img/angry.gif"/></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Awkward<br/><img src="./img/sweat.gif" /></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>ahaMoment<br/><img src="./img/ahaMoment.gif"/></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Happy<br/><img src="./img/happy.gif"/></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Sad<br/><img src="./img/sad.gif"/></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Confuse<br/><img src="./img/confuse.gif"/></td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>eyeLove<br/><img src="./img/eyeLove.gif"/></td>
+				</tr>
+			</tbody>
+		</table>	
+	</body>
+</html>

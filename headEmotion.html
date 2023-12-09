@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+		<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+		<link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+		<script type="text/javascript">
+			jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+				"formatted-num-pre": function ( a ) {
+					a = (a === "-" || a === "") ? 0 : a.replace( /[^\d\-\.]/g, "" );
+					return parseFloat( a );
+				},
+
+				"formatted-num-asc": function ( a, b ) {
+					return a - b;
+				},
+
+				"formatted-num-desc": function ( a, b ) {
+					return b - a;
+				}
+			} );
+
+			
+			$(document).ready( function () {
+				$('#emotion1').dataTable( {
+					columnDefs: [
+						{ type: 'formatted-num', targets: 0 }
+					]
+				});
+				$('#emotion2').dataTable( {
+					columnDefs: [
+						{ type: 'formatted-num', targets: 0 }
+					]
+				});
+				$('#emotion3').dataTable( {
+					columnDefs: [
+						{ type: 'formatted-num', targets: 0 }
+					]
+				});
+				$('#emotion4').dataTable( {
+					columnDefs: [
+						{ type: 'formatted-num', targets: 0 }
+					]
+				});
+
+			} );
+		</script>
+		<style type="text/css">
+			table, th, td{
+				border:1px solid black;
+				border-collapse : collapse;
+				vertical-align: top;
+			}
+
+			table img{
+				width:200px;
+			}
+		</style>
+
+	</head>
+	<body>
+		headEmotion
+		<table id="emotion3">
+			<thead>
+				<tr>
+					<th>Code</th>
+					<th>Image</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>0</td>
+					<td>neutral<br/><img src="./img/Neutral.gif"/></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Laugh Down<br/><img src="./img/laughDown.gif"/></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Laugh Up<br/><img src="./img/laughUp.gif"/></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>look away<br/><img src="./img/lookAwayDown.gif"/></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>look away angry<br/><img src="./img/lookAwayUp.gif"/></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Nod Once<br/><img src="./img/nodOnce.gif"/></td>
+				</tr>
+
+				<tr>
+					<td>6</td>
+					<td>nod Twice<br/><img src="./img/nodDouble.gif"/></td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Laugh Up<br/><img src="./img/laughUp.gif"/></td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Shake Body<br/><img src="./img/shakeBody.gif"/></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td>Surpise<br/><img src="./img/surprise.gif"/></td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td>Swing Body<br/><img src="./img/swingBody.gif"/></td>
+				</tr>
+
+				<tr>
+					<td>11</td>
+					<td>Tilt Neck<br/><img src="./img/tiltNeck.gif"/></td>
+				</tr>
+				<tr>
+					<td>12</td>
+					<td>Turn Left<br/><img src="./img/turnLeft.gif"/></td>
+				</tr>
+				<tr>
+					<td>13</td>
+					<td>Turn Right<br/><img src="./img/turnRight.gif"/></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
